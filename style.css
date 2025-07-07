@@ -1,357 +1,158 @@
-/* Importação de fonte - opcional, use a que preferir */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
 :root {
-    /* Cores */
-    --cor-fundo: #0a0a10;
-    --cor-principal: #1f1f2e;
-    --cor-destaque: #a271f6;
-    --cor-texto: #e0e0e0;
-    --cor-borda: #3b3b4d;
+    --branco: rgb(255, 255, 255);
+    --cor-de-fundo: #001946;
+    --fundo-senha: #00102e;
+    --fundo-texto: #011130;
+    --borda: #ffffff;
+    --roboto: 'Roboto', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
+}
 
-    /* Cores da barra de força */
-    --cor-muito-fraca: #ff4d4d; /* Vermelho */
-    --cor-fraca: #ff8c42; /* Laranja */
-    --cor-razoavel: #ffd166; /* Amarelo */
-    --cor-boa: #a8e6cf; /* Verde Claro */
-    --cor-forte: #5cb85c; /* Verde */
-    --cor-muito-forte: #1a75ff; /* Azul */
+* {
+    font-weight: 400;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.conteudo {
-    background-color: var(--cor-principal);
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-    border: 1px solid var(--cor-borda);
-}
-
-.conteudo-titulo {
-    margin-bottom: 30px;
-}
-
-.conteudo-titulo img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
+    color: var(--branco);
+    background-color: var(--cor-de-fundo);
+    font-family: var(--roboto);
 }
 
 .titulo-principal {
-    font-size: 2.2em;
-    font-weight: 700;
-    color: var(--cor-destaque);
-    margin: 0 0 10px;
+    font-family: var(--roboto-mono);
+    font-size: 32px;
 }
 
 .titulo-secundario {
-    font-size: 1em;
-    font-weight: 400;
-    color: var(--cor-texto);
-    margin: 0;
+    font-size: 24px;
+}
+
+.conteudo-titulo {
+    text-align: center;
+    margin-top: 80px;
 }
 
 .conteudo-senha {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.conteudo-senha label {
-    font-weight: 600;
-    color: var(--cor-destaque);
-    white-space: nowrap; /* Evita que o texto quebre */
+    margin-top: 80px;
+    background: var(--fundo-senha);
+    padding: 24px;
+    border-bottom: 6px solid var(--borda);
 }
 
 #campo-senha {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 8px;
-    background-color: #2b2b3b;
-    color: var(--cor-destaque);
-    font-size: 1.2em;
-    font-weight: 600;
-    text-align: center;
-    outline: none;
-    cursor: default; /* Indica que o campo não é editável diretamente */
-}
-
-#botao-copiar {
-    background-color: var(--cor-destaque);
-    color: #fff;
+    background-color: var(--fundo-senha);
     border: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    color: var(--branco);
+    font-family: var(--roboto-mono);
+    font-size: 40px;
+    width: 70%;
 }
 
-#botao-copiar:hover {
-    background-color: #8c5cdb;
+#campo-senha:focus {
+    outline: none;
 }
 
-#botao-copiar:active {
-    transform: translateY(1px);
+.conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .parametro {
-    background-color: #1a1a25;
-    border-radius: 10px;
-    padding: 25px;
-    border: 1px solid var(--cor-borda);
-    text-align: left;
+    background-color: var(--fundo-texto);
+    border: 2px solid var(--borda);
+    margin-top: 32px;
+    padding: 24px;
 }
 
 .parametro-titulo {
-    font-size: 1.4em;
-    font-weight: 600;
-    color: var(--cor-destaque);
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
+    font-family: var(--roboto-mono);
+    font-size: 28px;
+}
+
+.parametro-senha__titulo {
+    font-size: 24px;
 }
 
 .parametro-coluna__senha {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
 }
 
 .parametro-senha {
-    padding: 15px;
-    background-color: #2b2b3b;
-    border-radius: 8px;
-    border: 1px solid var(--cor-borda);
-}
-
-.parametro-senha__titulo {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--cor-texto);
-    margin-top: 0;
-    margin-bottom: 15px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .parametro-senha-botoes {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
 }
 
 .parametro-senha__botao {
-    background-color: var(--cor-destaque);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 1.5em;
-    line-height: 1; /* Alinha o texto verticalmente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--fundo-texto);
+    color: var(--branco);
+    border: 2px solid var(--borda);
+    padding: 24px;
+    font-size: 24px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.parametro-senha__botao:hover {
-    background-color: #8c5cdb;
-}
-
-.parametro-senha__botao:active {
-    transform: translateY(1px);
 }
 
 .parametro-senha__texto {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--cor-texto);
+    padding: 24px;
+    border-top: 2px solid var(--borda);
+    border-bottom: 2px solid var(--borda);
     margin: 0;
-    min-width: 30px; /* Garante que o número não distorce o layout */
-    text-align: center;
+    font-size: 24px;
 }
 
-.parametro-senha-checkbox {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+label {
+    font-size: 20px;
 }
 
-.parametro-senha-checkbox:last-of-type {
-    margin-bottom: 0;
-}
-
-.parametro-senha-checkbox input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
+.checkbox {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--cor-borda);
-    border-radius: 4px;
-    background-color: #3b3b4d;
     cursor: pointer;
-    position: relative;
-    outline: none;
-    margin-right: 10px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.parametro-senha-checkbox input[type="checkbox"]:checked {
-    background-color: var(--cor-destaque);
-    border-color: var(--cor-destaque);
-}
-
-.parametro-senha-checkbox input[type="checkbox"]:checked::after {
-    content: '\2713'; /* Tick mark */
-    color: #fff;
-    font-size: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-}
-
-.parametro-senha-checkbox label {
-    font-size: 1em;
-    color: var(--cor-texto);
-    cursor: pointer;
-    flex-grow: 1;
-}
-
-#campo-caracteres-excluidos {
-    flex-grow: 1;
-    padding: 8px 10px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 6px;
-    background-color: #3b3b4d;
-    color: var(--cor-texto);
-    font-size: 0.9em;
-    outline: none;
-    margin-left: 10px; /* Espaçamento entre o label e o input */
-}
-
-#campo-caracteres-excluidos:focus {
-    border-color: var(--cor-destaque);
-}
-
-#campo-caracteres-excluidos:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background-color: #2b2b3b;
-}
-
-/* Estilos da barra de força */
 .barra {
+    background-color: var(--fundo-senha);
+    height: 30px;
     width: 100%;
-    height: 10px;
-    background-color: #3b3b4d;
-    border-radius: 5px;
-    overflow: hidden; /* Garante que a 'forca' fique dentro da 'barra' */
-    margin-bottom: 10px;
 }
 
 .forca {
-    height: 100%;
-    width: 0%; /* O JS vai controlar a largura */
-    border-radius: 5px;
-    transition: background-color 0.5s ease, width 0.5s ease;
+    height: 30px;
+    position: relative;
+    bottom: 30px;
 }
 
-/* Classes para os diferentes níveis de força (cores e largura controladas pelo JS) */
-.forca.muito-fraca {
-    background-color: var(--cor-muito-fraca);
+.fraca {
+    width: 25%;
+    background-color: #66000c;
 }
 
-.forca.fraca {
-    background-color: var(--cor-fraca);
+.media {
+    background-color: #a5a200;
+    width: 50%;
 }
 
-.forca.razoavel {
-    background-color: var(--cor-razoavel);
+.forte {
+    background-color: #009e08;
+    width: 100%;
 }
-
-.forca.boa {
-    background-color: var(--cor-boa);
-}
-
-.forca.forte {
-    background-color: var(--cor-forte);
-}
-
-.forca.muito-forte {
-    background-color: var(--cor-muito-forte);
-}
-
 
 .parametro-senha-textos {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8em;
-    color: #999;
-    margin-bottom: 15px;
 }
 
-.entropia, .tempo-quebra {
-    font-size: 0.95em;
-    color: var(--cor-texto);
-    margin-bottom: 8px;
-}
 
-.entropia span, .tempo-quebra span {
-    font-weight: 600;
-    color: var(--cor-destaque);
-}
-
-.feedback-forca {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--cor-destaque); /* A cor pode mudar via JS dependendo da força */
-    margin-top: 15px;
-    min-height: 1.2em; /* Garante que o espaço seja reservado */
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .conteudo {
-        padding: 25px;
-    }
-
-    .titulo-principal {
-        font-size: 1.8em;
-    }
-
-    .conteudo-senha {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .conteudo-senha label {
-        text-align: left;
-        margin-bottom: 5px;
-    }
-
-    #botao-copiar {
-        width: 100%;
+@media screen and (min-width: 768px) {
+    .parametro-coluna__senha {
+        flex-direction: row;
     }
 }
